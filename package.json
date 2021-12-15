@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "archiver": "^5.3.0",
+    "canvas": "^2.8.0",
+    "images-scraper": "^6.4.0",
+    "jsdom": "^19.0.0",
+    "node-fetch": "^3.1.0",
+    "terminal-kit": "^2.3.0",
+    "valid-filename": "^4.0.0"
+  },
+  "name": "teachablemachine-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "author": "Memetan",
+  "license": "Apache-2.0",
+  "description": "",
+  "type": "module"
+}
