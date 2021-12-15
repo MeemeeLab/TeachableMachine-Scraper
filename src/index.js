@@ -122,6 +122,7 @@ const mainInterface = new MainInterface(config, {
                     terminal.terminal.green('Packing finished.\n');
                     packer.saveTo(filePath).then(async () => {
                         terminal.terminal.green('Successfully saved to file.\n');
+                        packer.dispose();
                         terminal.terminal.white('Press any key to continue...');
                         await terminal.terminal.waitFor('key');
                         mainInterface.Init();
