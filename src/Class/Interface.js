@@ -89,7 +89,7 @@ export class GeneralConfigurationInterface {
     Init() {
         this.term.clear();
         this.config.writeCopyright();
-        this.term.yellow('Scrape Images\n');
+        this.term.yellow('Edit configurations\n');
         this.term.singleColumnMenu([
             'Edit class configuration (Search query, folder name, etc.)',
             'Edit manifest configuration (Epochs, batch size, etc.)',
