@@ -86,6 +86,7 @@
 
     "TMSAVE_TITLE": "Pack images into a tm file",
     "TMSAVE_TYPE_FILE_PATH": "Type file path: ",
+    "TMSAVE_LOAD_CONFIG_FIRST": "Warning: You must load configuration that used to scrape images first.\nIf you don't, please cancel by pressing 'ESC' key and load configuration.",
 
     "LANGUAGECONFIGURATION_TITLE": "Language configuration",
     "LANGUAGECONFIGURATION_SELECT_LANGUAGE": "Select language: "

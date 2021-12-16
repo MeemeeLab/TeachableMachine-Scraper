@@ -86,6 +86,7 @@
 
     "TMSAVE_TITLE": "TMファイルにパック",
     "TMSAVE_TYPE_FILE_PATH": "保存先のファイルパスを入力: ",
+    "TMSAVE_LOAD_CONFIG_FIRST": "警告: 最初に画像をスクレイピングするために使用された設定をロードする必要があります。\nそうでない場合は、「ESC」キーを押してキャンセルし、設定をロードしてください。",
 
     "LANGUAGECONFIGURATION_TITLE": "言語設定",
     "LANGUAGECONFIGURATION_SELECT_LANGUAGE": "言語を選択: "

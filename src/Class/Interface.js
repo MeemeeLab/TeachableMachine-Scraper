@@ -508,6 +508,7 @@ export class TMSaveInterface {
         this.term.clear();
         this.config.writeCopyright();
         this.term.yellow(this.lang.get('TMSAVE_TITLE') + '\n\n');
+        this.term.blue(this.lang.get('TMSAVE_LOAD_CONFIG_FIRST') + '\n\n');
         this.term.white(this.lang.get('TMSAVE_TYPE_FILE_PATH'));
         this.term.fileInput({cancelable: true}, (err, response) => {
             if (err) throw err;
