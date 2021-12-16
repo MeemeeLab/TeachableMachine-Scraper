@@ -152,13 +152,13 @@ let mainInterface = new MainInterface(config, {
             cancel: () => {
                 mainInterface.Init();
             },
-            save: createSaveFunction(isConfig, mfConfig, imageScrapeInterface.Init)
+            save: createSaveFunction(isConfig, mfConfig, mainInterface.Init)
         });
     },
     restoreConfig: () => {
         new ConfigurationLoadInterface(config, {
             cancel: () => {
-                imageScrapeInterface.Init();
+                mainInterface.Init();
             },
             load: (filePath) => {
                 const json = JSON.parse(fs.readFileSync(filePath, 'utf8'));
