@@ -1,0 +1,92 @@
+{
+    "metadata": {
+        "userFacingName": "Japanese [日本語]",
+        "internalName": "ja-JP"
+    },
+
+    "APP_PRODUCT_NAME": "TeachableMachine-Scraper",
+    "APP_VERSION": "1.1.0",
+
+    "PRESS_ANY_KEY_TO_CONTINUE": "続行するには何かキーを押してください . . .",
+
+    "CONFIG_SAVED": "設定を保存しました。",
+
+    "BACK": "戻る",
+    "DONE": "完了",
+    "EXIT": "終了",
+
+    "AUTHOR_TEXT": "作成者: ",
+    "AUTHOR": "@MeemeeLab",
+
+    "SCRAPING_STARTED": "スクレイピングを開始しました しばらく時間がかかる場合があります。",
+    "SCRAPING_INFO_FIRST": "",
+    "SCRAPING_INFO_END": " 個のクラスをスクレイピングします。",
+    "SCRAPING_PROGRESS_FIRST": "スクレイピング中: ",
+    "SCRAPING_FINISHED": "スクレイピングが完了しました。",
+    "SCRAPING_REMOVE_FOR_ACCURACY": "outフォルダー内にスクレイピングされました。\nTMファイルにパックする前に、関係のない画像を削除することをお勧めします。",
+
+    "PACKING_STARTED": "パックを開始しました。",
+    "PACKING_FINISHED": "パックが完了しました。",
+    "PACKING_SAVED": "パックをファイルに保存しました。",
+    "PACKING_PACKING": "パック中: ",
+
+    "MAIN_WHAT_NEXT": "選択してください",
+    "MAIN_LANGUAGE_CONFIG": "言語設定",
+    "MAIN_EDIT_CONFIG": "設定を編集 (クラス、マニフェスト、スクレイピング)",
+    "MAIN_SCRAPE_IMAGES": "画像をスクレイピング (スクレイピングを開始)",
+    "MAIN_PACK_TM": "TMファイルをパック",
+    "MAIN_SAVE_CONFIG": "設定を保存",
+    "MAIN_LOAD_CONFIG": "設定を読み込み",
+    "MAIN_EXIT": "終了",
+
+    "GENERALCONFIGURATION_TITLE": "設定",
+    "GENERALCONFIGURATION_EDIT_CLASSES": "クラスを編集 (検索ワード、フォルダー名、その他)",
+    "GENERALCONFIGURATION_EDIT_MANIFEST": "マニフェストを編集 (エポック、バッチサイズ、その他)",
+
+    "CLASSESCONFIGURATION_CLASS_NAME": "クラス名",
+    "CLASSESCONFIGURATION_CLASS_QUERY": "検索ワード",
+    "CLASSESCONFIGURATION_CLASS_FOLDER": "フォルダー名",
+    "CLASSESCONFIGURATION_CLASS_REMOVE": "クラスを削除",
+    "CLASSESCONFIGURATION_CLASS_ADD": "追加",
+    "CLASSESCONFIGURATION_NEW_CLASS_NAME": "New Class",
+    "CLASSESCONFIGURATION_TYPE_CLASS_NAME": "クラス名を入力: ",
+    "CLASSESCONFIGURATION_TYPE_CLASS_QUERY": "検索ワードを入力: ",
+    "CLASSESCONFIGURATION_TYPE_CLASS_FOLDER": "フォルダー名を入力: ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_NAME_EXISTS": "同じ名前のクラスが既に存在します。 ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_NAME_EMPTY": "クラス名を入力してください。 ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_QUERY_EMPTY": "検索ワードを入力してください。 ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_EMPTY": "フォルダー名を入力してください。 ",
+    "CLASSESCONFIGURATION_ERROR_CLASSES_MUST_HAVE_TWO": "クラスは2つ以上必要です。 ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_NAME_NOT_VALID_FILENAME": "クラス名はファイル名として無効です。 ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_NOT_VALID_FOLDERNAME": "フォルダー名はフォルダー名として無効です。 ",
+    "CLASSESCONFIGURATION_REMOVE_CLASS_CONFIRM_FIRST": "クラスを削除しようとしています: '",
+    "CLASSESCONFIGURATION_REMOVE_CLASS_CONFIRM_END": "'. よろしいですか? (y/n)",
+
+    "MANIFESTCONFIGURATION_EPOCHS": "エポック",
+    "MANIFESTCONFIGURATION_BATCH_SIZE": "バッチサイズ",
+    "MANIFESTCONFIGURATION_LEARNING_RATE": "学習率",
+    "MANIFESRCONFIGURATION_TYPE_EPOCHS": "エポックを入力: ",
+    "MANIFESTCONFIGURATION_TYPE_BATCH_SIZE": "バッチサイズを入力: ",
+    "MANIFESTCONFIGURATION_TYPE_LEARNING_RATE": "学習率を入力: ",
+    "MANIFESTCONFIGURATION_ERROR_EPOCHS_NOT_NUMBER": "エポックは数値で入力してください。 ",
+    "MANIFESTCONFIGURATION_ERROR_BATCH_SIZE_NOT_NUMBER": "バッチサイズは数値で入力してください。 ",
+    "MANIFESTCONFIGURATION_ERROR_LEARNING_RATE_NOT_NUMBER": "学習率は数値で入力してください。 ",
+
+    "CONFIGURATIONNOTSAVED_CHANGES_NOT_SAVED": "警告: 設定は自動的に保存されません。保存しますか? (y/n)",
+
+    "SAVECONFIGURATION_TITLE": "設定を保存",
+    "SAVECONFIGURATION_TYPE_FILE_PATH": "保存先のファイルパスを入力: ",
+    "SAVECONFIGURATION_SAVE_SCRAPE_CONFIG": "スクレイピング設定を保存",
+    "SAVECONFIGURATION_SAVING": "保存中...",
+
+    "LOADCONFIGURATION_TITLE": "設定を読み込み",
+    "LOADCONFIGURATION_TYPE_FILE_PATH": "読み込むファイルパスを入力: ",
+    "LOADCONFIGURATION_LOAD_SCRAPE_CONFIG": "スクレイピング設定を読み込み",
+    "LOADCONFIGURATION_LOADING": "読み込み中...",
+
+    "TMSAVE_TITLE": "TMファイルにパック",
+    "TMSAVE_TYPE_FILE_PATH": "保存先のファイルパスを入力: ",
+
+    "LANGUAGECONFIGURATION_TITLE": "言語設定",
+    "LANGUAGECONFIGURATION_SELECT_LANGUAGE": "言語を選択: "
+}
