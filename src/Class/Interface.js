@@ -184,6 +184,26 @@ export class EditClassConfigurationInterface {
                             this.showConfigOption(configIndex, cb);
                             return;
                         }
+                        if (response2.length === 0) {
+                            this.term.eraseLine();
+                            this.term.column(0);
+                            this.term.red(this.lang.get('CLASSESCONFIGURATION_ERROR_CLASS_NAME_EMPTY'));
+                            this.term.white(this.lang.get('PRESS_ANY_KEY_TO_CONTINUE'));
+                            await this.term.waitFor('key');
+                            this.term.eraseLine();
+                            this.showConfigOption(configIndex, cb);
+                            return;
+                        }
+                        if (this.imageScrapeConfiguration.getClasses().findIndex(c => c.name === response2) !== -1) {
+                            this.term.eraseLine();
+                            this.term.column(0);
+                            this.term.red(this.lang.get('CLASSESCONFIGURATION_ERROR_CLASS_NAME_EXISTS'));
+                            this.term.white(this.lang.get('PRESS_ANY_KEY_TO_CONTINUE'));
+                            await this.term.waitFor('key');
+                            this.term.eraseLine();
+                            this.showConfigOption(configIndex, cb);
+                            return;
+                        }
                         classConfig.name = response2;
                         this.term.eraseLine();
                         this.showConfigOption(configIndex, cb);
@@ -191,8 +211,18 @@ export class EditClassConfigurationInterface {
                     break;
                 case 1: 
                     this.term.white('\n' + this.lang.get('CLASSESCONFIGURATION_TYPE_CLASS_QUERY'));
-                    this.term.inputField({default: classConfig.query}, (err2, response2) => {
+                    this.term.inputField({default: classConfig.query}, async (err2, response2) => {
                         if (err2) throw err2;
+                        if (response2.length === 0) {
+                            this.term.eraseLine();
+                            this.term.column(0);
+                            this.term.red(this.lang.get('CLASSESCONFIGURATION_ERROR_CLASS_QUERY_EMPTY'));
+                            this.term.white(this.lang.get('PRESS_ANY_KEY_TO_CONTINUE'));
+                            await this.term.waitFor('key');
+                            this.term.eraseLine();
+                            this.showConfigOption(configIndex, cb);
+                            return;
+                        }
                         classConfig.query = response2;
                         this.term.eraseLine();
                         this.showConfigOption(configIndex, cb);
@@ -206,6 +236,16 @@ export class EditClassConfigurationInterface {
                             this.term.eraseLine();
                             this.term.column(0);
                             this.term.red(this.lang.get('CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_NOT_VALID_FOLDERNAME'));
+                            this.term.white(this.lang.get('PRESS_ANY_KEY_TO_CONTINUE'));
+                            await this.term.waitFor('key');
+                            this.term.eraseLine();
+                            this.showConfigOption(configIndex, cb);
+                            return;
+                        }
+                        if (response2.length === 0) {
+                            this.term.eraseLine();
+                            this.term.column(0);
+                            this.term.red(this.lang.get('CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_EMPTY'));
                             this.term.white(this.lang.get('PRESS_ANY_KEY_TO_CONTINUE'));
                             await this.term.waitFor('key');
                             this.term.eraseLine();
