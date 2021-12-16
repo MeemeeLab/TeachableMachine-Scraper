@@ -13,13 +13,13 @@ export default class LanguageManager {
 
     static getAllLanguages() {
         const languages = fs.readdirSync(path.join('assets', 'lang'));
-        languages.map(language => {
+        return languages.map(language => {
             const metadata = JSON.parse(
                 fs.readFileSync(
                     path.join('assets', 'lang', language), 'utf8'
                 )
             ).metadata;
-            return {userFacingName: metadata.userFacingName, internalName: metadata.internalName, fileName: path.basename(language)};
+            return {userFacingName: metadata.userFacingName, internalName: metadata.internalName, fileName: path.basename(language, '.json')};
         });
     }
 

@@ -20,7 +20,8 @@ import {
     ConfigurationSaveInterface,
     ConfigurationNotSavedInterface,
     ConfigurationLoadInterface,
-    TMSaveInterface
+    TMSaveInterface,
+    LanguageConfigurationInterface
 } from './Class/Interface.js';
 
 import { createSaveFunction } from './Util/Configuration.js';
@@ -31,9 +32,9 @@ if (!fs.existsSync('./out')) {
     fs.mkdirSync('./out');
 }
 
-const languageManager = new LanguageManager('EN_US');
+let languageManager = new LanguageManager('EN_US');
 
-const config = new InterfaceConfiguration(terminal.terminal, languageManager, {
+let config = new InterfaceConfiguration(terminal.terminal, languageManager, {
     writeCopyright: function () {
         this.terminal.white(languageManager.get('APP_PRODUCT_NAME') + ' ' + languageManager.get('APP_VERSION') + '\n');
         this.terminal.white(languageManager.get('AUTHOR_TEXT')).green(languageManager.get('AUTHOR')).white('\n\n');
@@ -43,7 +44,16 @@ const config = new InterfaceConfiguration(terminal.terminal, languageManager, {
 let isConfig = new ImageScrapeConfiguration();
 let mfConfig = new ManifestConfiguration();
 
-const mainInterface = new MainInterface(config, {
+let mainInterface = new MainInterface(config, {
+    langConfig: () => {
+        new LanguageConfigurationInterface(config, {
+            changeLang: (lang) => {
+                languageManager = new LanguageManager(lang);
+                config = new InterfaceConfiguration(terminal.terminal, languageManager, config.callbacks);
+                mainInterface = new MainInterface(config, mainInterface.callbacks);
+            }
+        });
+    },
     config: () => {
         const imageScrapeInterface = new GeneralConfigurationInterface(config, {
             editConfig: () => {

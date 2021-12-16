@@ -36,7 +36,7 @@ export class MainInterface {
     callbacks;
     /**
      * @param {InterfaceConfiguration} config
-     * @param {{config: Function, scrape: Function, packImage: Function, saveConfig: Function, restoreConfig: Function, exit: Function}} callbacks
+     * @param {{langConfig: Function, config: Function, scrape: Function, packImage: Function, saveConfig: Function, restoreConfig: Function, exit: Function}} callbacks
      */
     constructor(config, callbacks) {
         this.config = config;
@@ -50,6 +50,7 @@ export class MainInterface {
         this.config.writeCopyright();
         this.term.white(this.lang.get('MAIN_WHAT_NEXT') + '\n\n');
         this.term.singleColumnMenu([
+            this.lang.get('MAIN_LANGUAGE_CONFIG'),
             this.lang.get('MAIN_EDIT_CONFIG'),
             this.lang.get('MAIN_SCRAPE_IMAGES'),
             this.lang.get('MAIN_PACK_TM'),
@@ -60,21 +61,24 @@ export class MainInterface {
             if (err) throw err;
             switch (response.selectedIndex) {
                 case 0:
-                    this.callbacks.config.call(this);
+                    this.callbacks.langConfig.call(this);
                     break;
                 case 1:
-                    this.callbacks.scrape.call(this);
+                    this.callbacks.config.call(this);
                     break;
                 case 2:
-                    this.callbacks.packImage.call(this);
+                    this.callbacks.scrape.call(this);
                     break;
                 case 3:
-                    this.callbacks.saveConfig.call(this);
+                    this.callbacks.packImage.call(this);
                     break;
                 case 4:
-                    this.callbacks.restoreConfig.call(this);
+                    this.callbacks.saveConfig.call(this);
                     break;
                 case 5:
+                    this.callbacks.restoreConfig.call(this);
+                    break;
+                case 6:
                     this.callbacks.exit.call(this);
                     break;
             }
@@ -472,6 +476,37 @@ export class TMSaveInterface {
                 return;
             }
             this.callbacks.save.call(this, response);
+        });
+    }
+}
+
+export class LanguageConfigurationInterface {
+    config;
+    term;
+    lang;
+    callbacks;
+
+    /**
+     * @param {InterfaceConfiguration} config
+     * @param {{changeLang: (fileName: string) => void}} callbacks
+    */
+    constructor(config, callbacks) {
+        this.config = config;
+        this.lang = config.getLanguageManager();
+        this.term = config.terminal;
+        this.callbacks = callbacks;
+        this.Init();
+    }
+
+    Init() {
+        this.term.clear();
+        this.config.writeCopyright();
+        this.term.yellow(this.lang.get('LANGUAGECONFIGURATION_TITLE') + '\n\n');
+        this.term.white(this.lang.get('LANGUAGECONFIGURATION_SELECT_LANGUAGE') + '\n\n');
+        this.term.singleColumnMenu(LanguageManager.getAllLanguages().map(l => l.userFacingName), (err, response) => {
+            if (err) throw err;
+            const fileName = LanguageManager.getAllLanguages()[response.selectedIndex].fileName;
+            this.callbacks.changeLang.call(this, fileName);
         });
     }
 }

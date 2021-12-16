@@ -31,6 +31,7 @@
     "PACKING_PACKING": "Packing",
 
     "MAIN_WHAT_NEXT": "What do you want to do next?",
+    "MAIN_LANGUAGE_CONFIG": "Language configuration",
     "MAIN_EDIT_CONFIG": "Edit configurations (Classes, Scrape, Manifest)",
     "MAIN_SCRAPE_IMAGES": "Scrape images (Start scraping)",
     "MAIN_PACK_TM": "Pack images into a tm file",
@@ -84,5 +85,8 @@
     "LOADCONFIGURATION_LOADING": "Loading...",
 
     "TMSAVE_TITLE": "Pack images into a tm file",
-    "TMSAVE_TYPE_FILE_PATH": "Type file path: "
+    "TMSAVE_TYPE_FILE_PATH": "Type file path: ",
+
+    "LANGUAGECONFIGURATION_TITLE": "Language configuration",
+    "LANGUAGECONFIGURATION_SELECT_LANGUAGE": "Select language: "
 }
