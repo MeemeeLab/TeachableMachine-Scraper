@@ -80,6 +80,6 @@ export default class TMPacker {
     }
 
     dispose() {
-        fs.rmdirSync(this.tempFolder, {recursive: true});
+        fs.rmSync(this.tempFolder, {recursive: true});
     }
 }
