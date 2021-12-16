@@ -6,6 +6,8 @@ import terminal from 'terminal-kit';
 import ImageScraper from './Class/ImageScraper.js';
 import TMPacker from './Class/TMPacker.js';
 
+import LanguageManager from './Class/LanguageManager.js';
+
 import ImageScrapeConfiguration from './Class/ImageScrapeConfiguration.js';
 import ManifestConfiguration from './Class/ManifestConfiguration.js';
 
@@ -23,14 +25,18 @@ import {
 
 import { createSaveFunction } from './Util/Configuration.js';
 
+terminal.terminal('Please wait while teachablemachine-scraper is loading...');
+
 if (!fs.existsSync('./out')) {
     fs.mkdirSync('./out');
 }
 
-const config = new InterfaceConfiguration(terminal.terminal, {
+const languageManager = new LanguageManager('EN_US');
+
+const config = new InterfaceConfiguration(terminal.terminal, languageManager, {
     writeCopyright: function () {
-        this.terminal.white('TeachableMachine-Scraper v1.0.0\n');
-        this.terminal.white('Author: ').green('@MeemeeLab').white('\n\n');
+        this.terminal.white(languageManager.get('APP_PRODUCT_NAME') + ' ' + languageManager.get('APP_VERSION') + '\n');
+        this.terminal.white(languageManager.get('AUTHOR_TEXT')).green(languageManager.get('AUTHOR')).white('\n\n');
     }
 });
 
@@ -63,14 +69,14 @@ const mainInterface = new MainInterface(config, {
         const classes = isConfig.getClasses();
         terminal.terminal.clear();
         config.writeCopyright();
-        terminal.terminal.yellow('Scraping started; this may take a while...\n');
-        terminal.terminal.white('Will scrape ').green(classes.length).white(' classes.\n');
+        terminal.terminal.yellow(languageManager.get('SCRAPING_STARTED') + '\n');
+        terminal.terminal.white(languageManager.get('SCRAPING_INFO_FIRST')).green(classes.length).white(languageManager.get('SCRAPING_INFO_END') + '\n');
         for (let i = 0; i < classes.length; i++) {
             const classConfig = classes[i];
             const actualPath = path.join('./out', classConfig.folder);
             if (!fs.existsSync(actualPath))
                 fs.mkdirSync(actualPath);
-            const progressBar = terminal.terminal.progressBar({title: 'Scraping ' + classConfig.name, eta: false, percent: true, y: terminal.terminal.height});
+            const progressBar = terminal.terminal.progressBar({title: languageManager.get('SCRAPING_PROGRESS_FIRST') + classConfig.name, eta: false, percent: true, y: terminal.terminal.height});
             const imageScraper = new ImageScraper(
                 classConfig.query, 
                 actualPath,
@@ -92,9 +98,9 @@ const mainInterface = new MainInterface(config, {
             progressBar.stop();
             terminal.terminal.white('\n');
         }
-        terminal.terminal.green('Scraping finished.\n');
-        terminal.terminal.yellow('You can now view the images in the out folder.\nYou should remove unrelated images before packing to tm file for more accuracy.\n');
-        terminal.terminal.white('Press any key to continue...');
+        terminal.terminal.green(languageManager.get('SCRAPING_FINISHED') + '\n');
+        terminal.terminal.yellow(languageManager.get('SCRAPING_REMOVE_FOR_ACCURACY') + '\n');
+        terminal.terminal.white(languageManager.get('PRESS_ANY_KEY_TO_CONTINUE'));
         await terminal.terminal.waitFor('key');
         mainInterface.Init();
     },
@@ -107,8 +113,8 @@ const mainInterface = new MainInterface(config, {
                 filePath += '.tm';
                 terminal.terminal.clear();
                 config.writeCopyright();
-                terminal.terminal.yellow('Packing started\n');
-                const progressBar = terminal.terminal.progressBar({title: 'Packing', eta: false, percent: true, y: terminal.terminal.height, syncMode: true});
+                terminal.terminal.yellow(languageManager.get('PACKING_STARTED') + '\n');
+                const progressBar = terminal.terminal.progressBar({title: languageManager.get('PACKING_PACKING'), eta: false, percent: true, y: terminal.terminal.height, syncMode: true});
                 const packer = new TMPacker(isConfig, mfConfig);
                 packer.pack((progress) => {
                     progressBar.update(progress);
@@ -119,11 +125,11 @@ const mainInterface = new MainInterface(config, {
                 }).then(() => {
                     progressBar.update(1);
                     progressBar.stop();
-                    terminal.terminal.green('Packing finished.\n');
+                    terminal.terminal.green(languageManager.get('PACKING_FINISHED') + '\n');
                     packer.saveTo(filePath).then(async () => {
-                        terminal.terminal.green('Successfully saved to file.\n');
+                        terminal.terminal.green(languageManager.get('PACKING_SAVED') + '\n');
                         packer.dispose();
-                        terminal.terminal.white('Press any key to continue...');
+                        terminal.terminal.white(languageManager.get('PRESS_ANY_KEY_TO_CONTINUE'));
                         await terminal.terminal.waitFor('key');
                         mainInterface.Init();
                     });
@@ -156,7 +162,7 @@ const mainInterface = new MainInterface(config, {
         new ConfigurationNotSavedInterface(config, {
             discard: () => {
                 terminal.terminal.clear();
-                terminal.terminal.white('Bye!\n');
+                terminal.terminal.white(languageManager.get('EXIT'));
                 process.exit(0);
             },
             save: () => {
@@ -166,8 +172,8 @@ const mainInterface = new MainInterface(config, {
                     },
                     save: createSaveFunction(isConfig, mfConfig, () => {
                         terminal.terminal.clear();
-                        terminal.terminal.green('Successfully saved configuration.\n');
-                        terminal.terminal.white('Bye!\n');
+                        terminal.terminal.green(languageManager.get('CONFIG_SAVED') + '\n');
+                        terminal.terminal.white(languageManager.get('EXIT'));
                         process.exit(0);
                     })
                 });

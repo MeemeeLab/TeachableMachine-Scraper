@@ -1,0 +1,88 @@
+{
+    "metadata": {
+        "userFacingName": "English (United States)",
+        "internalName": "en-US"
+    },
+
+    "APP_PRODUCT_NAME": "TeachableMachine-Scraper",
+    "APP_VERSION": "1.1.0",
+
+    "PRESS_ANY_KEY_TO_CONTINUE": "Press any key to continue...",
+
+    "CONFIG_SAVED": "Successfully saved configuration.",
+
+    "BACK": "Back",
+    "DONE": "Done",
+    "EXIT": "Bye!",
+
+    "AUTHOR_TEXT": "Author: ",
+    "AUTHOR": "@MeemeeLab",
+
+    "SCRAPING_STARTED": "Scraping started; this may take a while...",
+    "SCRAPING_INFO_FIRST": "Will scrape ",
+    "SCRAPING_INFO_END": " class(es).",
+    "SCRAPING_PROGRESS_FIRST": "Scraping ",
+    "SCRAPING_FINISHED": "Scraping finished.",
+    "SCRAPING_REMOVE_FOR_ACCURACY": "You can now view the images in the out folder.\nYou should remove unrelated images before packing to tm file for more accuracy.",
+
+    "PACKING_STARTED": "Packing started",
+    "PACKING_FINISHED": "Packing finished.",
+    "PACKING_SAVED": "Successfully saved to file.",
+    "PACKING_PACKING": "Packing",
+
+    "MAIN_WHAT_NEXT": "What do you want to do next?",
+    "MAIN_EDIT_CONFIG": "Edit configurations (Classes, Scrape, Manifest)",
+    "MAIN_SCRAPE_IMAGES": "Scrape images (Start scraping)",
+    "MAIN_PACK_TM": "Pack images into a tm file",
+    "MAIN_SAVE_CONFIG": "Save configuration",
+    "MAIN_LOAD_CONFIG": "Load configuration",
+    "MAIN_EXIT": "Exit",
+
+    "GENERALCONFIGURATION_TITLE": "Edit configurations",
+    "GENERALCONFIGURATION_EDIT_CLASSES": "Edit class configuration (Search query, folder name, etc.)",
+    "GENERALCONFIGURATION_EDIT_MANIFEST": "Edit manifest configuration (Epochs, batch size, etc.)",
+
+    "CLASSESCONFIGURATION_CLASS_NAME": "Class Name",
+    "CLASSESCONFIGURATION_CLASS_QUERY": "Search Query",
+    "CLASSESCONFIGURATION_CLASS_FOLDER": "Folder Name",
+    "CLASSESCONFIGURATION_CLASS_REMOVE": "Remove Class",
+    "CLASSESCONFIGURATION_CLASS_ADD": "Add New",
+    "CLASSESCONFIGURATION_NEW_CLASS_NAME": "New Class",
+    "CLASSESCONFIGURATION_TYPE_CLASS_NAME": "Type class name: ",
+    "CLASSESCONFIGURATION_TYPE_CLASS_QUERY": "Type search query: ",
+    "CLASSESCONFIGURATION_TYPE_CLASS_FOLDER": "Type folder name: ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_NAME_EXISTS": "Class name already exists. ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_NAME_EMPTY": "Class name cannot be empty. ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_QUERY_EMPTY": "Search query cannot be empty. ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_EMPTY": "Folder name cannot be empty. ",
+    "CLASSESCONFIGURATION_ERROR_CLASSES_MUST_HAVE_TWO": "You must have at least two classes. ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_NAME_NOT_VALID_FILENAME": "ERROR: Class name must contain valid file name. ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_NOT_VALID_FOLDERNAME": "ERROR: Folder name must contain valid folder name. ",
+    "CLASSESCONFIGURATION_REMOVE_CLASS_CONFIRM_FIRST": "You are about to remove class '",
+    "CLASSESCONFIGURATION_REMOVE_CLASS_CONFIRM_END": "'. Are you sure? (y/n)",
+
+    "MANIFESTCONFIGURATION_EPOCHS": "Epochs",
+    "MANIFESTCONFIGURATION_BATCH_SIZE": "Batch Size",
+    "MANIFESTCONFIGURATION_LEARNING_RATE": "Learning Rate",
+    "MANIFESRCONFIGURATION_TYPE_EPOCHS": "Type epochs: ",
+    "MANIFESTCONFIGURATION_TYPE_BATCH_SIZE": "Type batch size: ",
+    "MANIFESTCONFIGURATION_TYPE_LEARNING_RATE": "Type learning rate: ",
+    "MANIFESTCONFIGURATION_ERROR_EPOCHS_NOT_NUMBER": "ERROR: Epochs must be a number. ",
+    "MANIFESTCONFIGURATION_ERROR_BATCH_SIZE_NOT_NUMBER": "ERROR: Batch size must be a number. ",
+    "MANIFESTCONFIGURATION_ERROR_LEARNING_RATE_NOT_NUMBER": "ERROR: Learning rate must be a number. ",
+
+    "CONFIGURATIONNOTSAVED_CHANGES_NOT_SAVED": "Warning: Changes will not saved automatically. Do you want to save it? (y/n)",
+
+    "SAVECONFIGURATION_TITLE": "Save scrape configuration",
+    "SAVECONFIGURATION_TYPE_FILE_PATH": "Type file path: ",
+    "SAVECONFIGURATION_SAVE_SCRAPE_CONFIG": "Save scrape configuration",
+    "SAVECONFIGURATION_SAVING": "Saving...",
+
+    "LOADCONFIGURATION_TITLE": "Load scrape configuration",
+    "LOADCONFIGURATION_TYPE_FILE_PATH": "Type file path: ",
+    "LOADCONFIGURATION_LOAD_SCRAPE_CONFIG": "Load scrape configuration",
+    "LOADCONFIGURATION_LOADING": "Loading...",
+
+    "TMSAVE_TITLE": "Pack images into a tm file",
+    "TMSAVE_TYPE_FILE_PATH": "Type file path: "
+}
