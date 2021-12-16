@@ -57,8 +57,8 @@
     "CLASSESCONFIGURATION_ERROR_CLASS_QUERY_EMPTY": "Search query cannot be empty. ",
     "CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_EMPTY": "Folder name cannot be empty. ",
     "CLASSESCONFIGURATION_ERROR_CLASSES_MUST_HAVE_TWO": "You must have at least two classes. ",
-    "CLASSESCONFIGURATION_ERROR_CLASS_NAME_NOT_VALID_FILENAME": "ERROR: Class name must contain valid file name. ",
-    "CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_NOT_VALID_FOLDERNAME": "ERROR: Folder name must contain valid folder name. ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_NAME_NOT_VALID_FILENAME": "Class name must contain valid file name. ",
+    "CLASSESCONFIGURATION_ERROR_CLASS_FOLDER_NOT_VALID_FOLDERNAME": "Folder name must contain valid folder name. ",
     "CLASSESCONFIGURATION_REMOVE_CLASS_CONFIRM_FIRST": "You are about to remove class '",
     "CLASSESCONFIGURATION_REMOVE_CLASS_CONFIRM_END": "'. Are you sure? (y/n)",
 
@@ -68,9 +68,9 @@
     "MANIFESRCONFIGURATION_TYPE_EPOCHS": "Type epochs: ",
     "MANIFESTCONFIGURATION_TYPE_BATCH_SIZE": "Type batch size: ",
     "MANIFESTCONFIGURATION_TYPE_LEARNING_RATE": "Type learning rate: ",
-    "MANIFESTCONFIGURATION_ERROR_EPOCHS_NOT_NUMBER": "ERROR: Epochs must be a number. ",
-    "MANIFESTCONFIGURATION_ERROR_BATCH_SIZE_NOT_NUMBER": "ERROR: Batch size must be a number. ",
-    "MANIFESTCONFIGURATION_ERROR_LEARNING_RATE_NOT_NUMBER": "ERROR: Learning rate must be a number. ",
+    "MANIFESTCONFIGURATION_ERROR_EPOCHS_NOT_NUMBER": "Epochs must be a number. ",
+    "MANIFESTCONFIGURATION_ERROR_BATCH_SIZE_NOT_NUMBER": "Batch size must be a number. ",
+    "MANIFESTCONFIGURATION_ERROR_LEARNING_RATE_NOT_NUMBER": "Learning rate must be a number. ",
 
     "CONFIGURATIONNOTSAVED_CHANGES_NOT_SAVED": "Warning: Changes will not saved automatically. Do you want to save it? (y/n)",
 
