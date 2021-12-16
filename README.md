@@ -2,7 +2,7 @@
 
 ## A simple but powerful scraper that can pack collected images to '.tm' extension file
 
-[日本語](README.jp.md)
+[日本語](README.JP.md)
 
 ![Image](https://i.imgur.com/tNKwwby.png, "Image")
 
