@@ -152,7 +152,7 @@ let mainInterface = new MainInterface(config, {
             cancel: () => {
                 mainInterface.Init();
             },
-            save: createSaveFunction(isConfig, mfConfig, mainInterface.Init)
+            save: createSaveFunction(isConfig, mfConfig, () => mainInterface.Init())
         });
     },
     restoreConfig: () => {
